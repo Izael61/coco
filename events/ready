@@ -1,0 +1,5 @@
+exports.run = (client) => {
+  const config = require('./config.json');
+  client.user.setGame("jogar-heavykits.tk")
+  console.log(`Em funcionamento!!!! total de ${client.channels.size} Canais, em ${client.guilds.size} servers, um total de ${client.users.size} usuarios.`);
+}
