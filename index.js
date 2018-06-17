@@ -31,3 +31,37 @@ client.on("message", message => {
 });
  
 client.login(config.token)
+
+
+client.on('guildMemberAdd', member => {
+  if(member.guild.id !== "457636885100232706") return;
+  let avatar = member.user.avatarURL
+  let embed = new Discord.RichEmbed()
+  .setColor('RED')
+  .setThumbnail(avatar)
+  .addField(':tada: | Bem vindo(a)!', `Bem vindo(a) ${member} Ao servidor :)`)
+  .addField(`:family_mwgb: | Você foi o escolhido por nós.`)
+  .setFooter(`Mensagem de Boas-Vindas.`)
+  .setTimestamp()
+  client.channels.get('457636885100232708').send({embed});
+
+  
+});
+
+client.on('guildMemberAdd', member => {
+  if(member.guild.id != '457636885100232706') return;
+  let cargo = member.guild.roles.find('name', 'Membros');
+  member.addRole(cargo);
+})
+
+client.on('message', message => {
+  if(!message.content.includes('porra') && !message.content.includes('caralho')) return;
+  message.delete();
+  message.channel.send('Sem palavras de baixo calão!')
+})
+
+client.on('message', message => {
+  if(!message.content.includes('discord.gg') && !message.content.includes('discord.me')) return;
+  message.delete();
+  message.channel.send('Não divulgue conquiste!')
+})
