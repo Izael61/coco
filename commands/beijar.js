@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 // Make sure you use exports.run when you have a command handler!
 module.exports.run = async (bot, message, args) => {
 
-    let replies = ['Selinho :kiss: ', 'Pegado :kiss: ', 'Colado :kiss: '];
+    let replies = ['Selinho :kiss: ', 'Pegado :kiss_mm:  ', 'Colado :kiss_ww:'];
     let result = Math.floor(Math.random() * replies.length);
 
     let makifuembed = new Discord.RichEmbed()
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription(`**${args[0]} Foi beijado por: <@${message.author.id}>**`)
         .setColor('RANDOM')
         .addField('Você beijou:', replies[result])
-        .setFooter('Pegado, Colado, Selinho', bot.user.displayAvatarURL)
+        .setFooter('Beijão', bot.user.displayAvatarURL)
         .setTimestamp();
 
     if (!message.mentions.users.first()) return message.channel.send(`<@${message.author.id}>, Oi, Mecione alguém que você queira pega :kiss: Entende?`).then(msg => {
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 }
 // Make sure you got exports.help || otherwise the command won't work!
 module.exports.help = {
-    name: "fmk",
+    name: "beijar",
 
     description: "O comando beijo é pra beija seu crush :p :kiss:",
 

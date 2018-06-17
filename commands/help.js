@@ -8,5 +8,6 @@ exports.run = (client,message,args)=>{
  .setTitle("Help - Comandos")
  .setTimestamp()
  .addBlankField();
- message.channel.send(embed)
+ message.author.send(embed)
+ message.channel.send("Mandei meus comando no seu pv.")
 }
