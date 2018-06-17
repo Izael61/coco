@@ -44,6 +44,7 @@ client.on('guildMemberAdd', member => {
   .setFooter(`Mensagem de Boas-Vindas.`)
   .setTimestamp()
   client.channels.get('457636885100232708').send({embed});
+  member.user.send('Eae ta curtindo o server? ')
 
   
 });
